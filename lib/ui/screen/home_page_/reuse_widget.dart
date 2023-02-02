@@ -1,7 +1,12 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:project2/resources/recources.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+//by using this package we can use the widget or create the widget when ever we want to implement is applications
 class button extends StatefulWidget {
+
+  // By using this we can crate the button in Application
   final String label;
   const button({Key? key, required this.label}) : super(key: key);
 
@@ -32,6 +37,8 @@ class _buttonState extends State<button> {
 }
 
 class drop_down_button extends StatefulWidget {
+
+  //by using this we can create the drop down button
   const drop_down_button({Key? key}) : super(key: key);
 
   @override
@@ -111,6 +118,8 @@ class option extends StatelessWidget {
 }
 
 class shop_detail extends StatelessWidget {
+
+  //its use to give the deatil of the shop or uesd to give the info of the shop
   final EdgeInsetsGeometry? left_margin;
   final IconData? icon;
   final String? label;
@@ -123,13 +132,13 @@ class shop_detail extends StatelessWidget {
         children: [
           Icon(
             icon,
-            size: 15,
+            size: 20.r,
             color: Colors.green,
           ),
           Text(
             "$label",
             style: TextStyle(
-                fontSize: 15, fontWeight: FontWeight.bold),
+                fontSize: 15.sp, fontWeight: FontWeight.bold),
           )
         ],
       ),

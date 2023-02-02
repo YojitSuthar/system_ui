@@ -1,15 +1,27 @@
 import 'package:flutter/material.dart';
 import 'ui/screen/home_page_/home_page.dart';
-class Myapp extends StatelessWidget {
-  const Myapp({Key? key}) : super(key: key);
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+
+//For responsive screen we use a package name screen utilities which give the features to make the app responsive ,and gives easy implementation to widgets
+
+class MyApp1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      home: home_page(),
+    return ScreenUtilInit(
+      designSize: Size(360, 690),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (context , child) {
+        return MaterialApp(
+          debugShowCheckedModeBanner: false,
+          home: home_page(),
+        );
+      },
     );
   }
 }
 
-void main()=> runApp(Myapp());
+void main()=>runApp(MyApp1());
+
