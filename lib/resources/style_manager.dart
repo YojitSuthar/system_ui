@@ -24,3 +24,8 @@ TextStyle getStyle(double fontSize, FontWeight fontWeight, Color color) {
 TextStyle getTextWeight(FontWeight fontWeight) {
   return TextStyle(fontWeight: fontWeight);
 }
+
+
+TextStyle newgetTextStyle(double fontSize,FontWeight fontWeight, Color color) {
+  return TextStyle(fontSize:fontSize,fontWeight: fontWeight, color: color);
+}

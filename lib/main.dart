@@ -5,7 +5,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 //For responsive screen we use a package name screen utilities which give the features to make the app responsive ,and gives easy implementation to widgets
 
-class MyApp1 extends StatelessWidget {
+class Myapp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
@@ -23,5 +23,5 @@ class MyApp1 extends StatelessWidget {
   }
 }
 
-void main()=>runApp(MyApp1());
+void main()=>runApp(Myapp());
 

@@ -23,14 +23,14 @@ class _buttonState extends State<button> {
         backgroundColor: MaterialStateProperty.all(ColorManager.white),
         shape: MaterialStateProperty.all(
           RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20.0),
-            side: BorderSide(width: 1.5, color: ColorManager.green),
+            borderRadius: BorderRadius.circular(15.0).w,
+            side: BorderSide(width: 1.w, color: ColorManager.green),
           ),
         ),
       ),
       child: Text(
         widget.label,
-        style: TextStyle(color: ColorManager.green, fontWeight: FontWeight.w500),
+        style: TextStyle(color: ColorManager.green, fontWeight: FontWeight.w500,fontSize: 15.sp),
       ),
     );
   }
@@ -61,9 +61,9 @@ class _drop_down_buttonState extends State<drop_down_button> {
     return DropdownButton(
       isDense: true,
       underline: Container(),
-      style: TextStyle(color: ColorManager.green,fontSize: 20),
+      style: TextStyle(color: ColorManager.green,fontSize: 18.sp),
       value: initial,
-      icon: const Icon(Icons.keyboard_arrow_down,color: ColorManager.green,size: 25,),
+      icon:  Icon(Icons.keyboard_arrow_down,color: ColorManager.green,size: 23.h,),
       items: items.map((String items) {
         return DropdownMenuItem(
           value: items,
@@ -96,20 +96,20 @@ class option extends StatelessWidget {
       decoration: BoxDecoration(
         color: container_color,
         borderRadius: BorderRadius.only(
-            topLeft: Radius.circular(8)),
+            topLeft: Radius.circular(8).w),
       ),
-      padding: EdgeInsets.fromLTRB(15, 5, 15, 4),
+      padding: EdgeInsets.only(left: 15,top: 5,right: 15,bottom: 4).r,
       child: Row(
         children: [
           Icon(
             icon,
             color: icon_color,
-            size: 18,
+            size: 14.w,
           ),
           Text(
             "$text",
             style: TextStyle(
-                color: text_color, fontWeight: FontWeight.w600, fontSize: 12),
+                color: text_color, fontWeight: FontWeight.w600, fontSize: 12.sp),
           )
         ],
       ),
@@ -132,7 +132,7 @@ class shop_detail extends StatelessWidget {
         children: [
           Icon(
             icon,
-            size: 20.r,
+            size: 20.w,
             color: Colors.green,
           ),
           Text(

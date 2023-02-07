@@ -10,116 +10,125 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
     Widget build(BuildContext context) {
       return Scaffold(
         body: SafeArea(
-          child: Container(
-            child: Column(
-              children: [
-                top_noch_bar(),//in this container we have search bar ,Navigation bar ,and QR scannner
-                SizedBox(
-                  height: 1.h,
-                ),
-                Stack(
+          child: Column(
+            children: [
+              top_noch_bar(),//in this container we have search bar ,Navigation bar ,and QR scannner
+              SizedBox(
+                height: 1.h,
+              ),
+              Container(
+                height: 170.h,
+                width: 400.w,
+                decoration: BoxDecoration(
+                    image: DecorationImage(
+                        image: AssetImage("asset/images/Tesco.jpeg"),
+                        fit: BoxFit.cover)),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Image.asset(
-                      height: 150.h,
-                      width: 370.w,
-                      fit: BoxFit.cover,
-                      ImageAssets.company_image,
-                    ),
                     Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          //It show the loaction of the shop
-                          margin: EdgeInsets.only(left: 12, top: 10).r,
-                          height: 25.h,
-                          child: Image.asset(
-                            //image of location icon
-                            IconAssets.location_icon,
+                          child: Row(
+                            children: [
+                              Container(
+                                //It show the loaction of the shop
+                                margin: EdgeInsets.only(left: 12, top: 5).r,
+                                height: 25.h,
+                                child: Image.asset(
+                                  //image of location icon
+                                  IconAssets.location_icon,
+                                ),
+                              ),
+                              SizedBox(
+                                width: 10.w,
+                              ),
+                              Text(
+                                "Johan - TW12 44GH - Londan",
+                                style: TextStyle(
+                                    fontSize: 15.sp,
+                                    fontWeight: FontWeightManager.medium),
+                              ),
+                            ],
                           ),
                         ),
-                        SizedBox(
-                          width: 10.w,
-                        ),
-                        Text(
-                          "Johan - TW12 44GH - Londan",
-                          style: TextStyle(
-                              fontSize: 15.sp, fontWeight: FontWeightManager.medium),
-                        ),
-                        SizedBox(
-                          width: 50.w,
-                        ),
                         Container(
+                          margin: EdgeInsets.only(right: 10).r,
                           //show thhe filtering the list
                           child: Icon(
                             Icons.filter_list,
                             color: ColorManager.green,
-                            size: 26,
+                            size: 26.w,
                           ),
                         ),
                       ],
                     ),
-                    Positioned(
-                      //we can share the location of the shop
-                        left: 5,
-                        top:135.r,
-                        child: CircleAvatar(
-                          radius: 15.w,
-                          backgroundColor: ColorManager.black.withOpacity(0.5),
-                          child: Icon(Icons.share,
-                              size: 20, color: ColorManager.white),
-                        )),
-                    Positioned(
-                        top: 130.h,
-                        left: 150.r,
-                        child: Row(
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Container(
+                            margin: EdgeInsets.only(left: 5,bottom: 5).r,
+                            child: CircleAvatar(
+                              radius: 12.w,
+                              backgroundColor: ColorManager.black.withOpacity(0.5),
+                              child:
+                              Icon(Icons.share, size: 20.h, color: ColorManager.white),
+                            )),
+
+                        Row(
                           children: [
-                            option(
-                              //option is the reuse widget or we can use as reausable
-                              text: "Closed",
-                              container_color: Colors.white.withOpacity(0.8),
-                              icon_color: ColorManager.red_accent,
-                              text_color: ColorManager.red_accent,
-                              icon: Icons.add_business,
+                            Container(
+                              child: option(
+                                text: "Closed",
+                                container_color: Colors.white.withOpacity(0.8),
+                                icon_color: ColorManager.red_accent,
+                                text_color: ColorManager.red_accent,
+                                icon: Icons.add_business,
+                              ),
                             ),
-                            SizedBox(
-                              width: 5.w,
-                            ),
-                            option(
-                              text: "Available",
-                              container_color:
-                              ColorManager.dark_green.withOpacity(0.7),
-                              icon_color: ColorManager.green,
-                              text_color: ColorManager.green,
-                              icon: Icons.circle_outlined,
+                            SizedBox(width: 8.w,),
+                            Container(
+                              child: option(
+                                text: "Available",
+                                container_color:
+                                ColorManager.dark_green.withOpacity(0.7),
+                                icon_color: ColorManager.green,
+                                text_color: ColorManager.green,
+                                icon: Icons.circle_outlined,
+                              ),
                             ),
                           ],
-                        ))
+                        )
+                      ],
+                    )
                   ],
                 ),
-                Row(
-                  children: [
-                    Column(
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Container(
+                    margin: EdgeInsets.only(left: 5).r,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Row(
                           children: [
-                            Padding(
-                              padding: const EdgeInsets.only(top: 3.0, left: 0).r,
-                              child: Icon(
-                                Icons.heart_broken,
-                                size: 25.r,
-                                color: ColorManager.green,
+                            Icon(
+                              Icons.heart_broken,
+                              size: 23.w,
+                              color: ColorManager.green,
+                            ),
+                            SizedBox(width: 10.w,),
+                            Text(
+                              "TESCO",
+                              style: getStyle(
+                                23.sp,
+                                FontWeightManager.bold,
+                                ColorManager.red_accent,
                               ),
                             ),
-                            Container(
-                              margin: EdgeInsets.only(top: 2, left: 5).r,
-                              child: Text(
-                                "TESCO",
-                                style: getStyle(
-                                  19.sp,
-                                  FontWeightManager.bold,
-                                  ColorManager.red_accent,
-                                ),
-                              ),
-                            )
                           ],
                         ),
                         Text(
@@ -131,142 +140,139 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
                         )
                       ],
                     ),
-                    _shop_detail(),//shop details shop the detail of the shop like rating ,near or far,and etc
+                  ),
+                  Container(
+                    margin: EdgeInsets.only(right: 5),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        shop_detail(
+                          icon: Icons.location_on,
+                          label: "12 Km",
+                        ),
+                        shop_detail(
+                          icon: Icons.fire_truck_sharp,
+                          label: "60 Minus",
+                        ),
+                        shop_detail(
+                          icon: Icons.star,
+                          label: "4.5",
+                        )
+
+                      ],
+                    ),
+                  ),
+
+                ],
+              ),
+              SizedBox(
+                height: 1.h,
+              ),
+              vendor_view(),//vendor view give the features to get the to the user like Offers,Branches,and all
+              SizedBox(
+                height: 3.h,
+              ),
+              Container(
+                height: 19.h,
+                width: 410.0.w,
+                child: const Align(
+                  alignment: Alignment(-1.0, -1.0),
+                  child: drop_down_button()//its is drop down menu button show the category the user want to get,
+                ),
+              ),
+              SizedBox(
+                height: 10.h,
+              ),
+              Expanded(
+                child: ListView(
+                  children: [
+                    product_detail_view(),
+                    //prooduct _detail_view gives the information of the product to the user
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    product_detail_view(),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    product_detail_view(),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    product_detail_view(),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    product_detail_view(),
+
                   ],
                 ),
-                SizedBox(
-                  height: 1.h,
-                ),
-                vendor_view(),//vendor view give the features to get the to the user like Offers,Branches,and all
-                SizedBox(
-                  height: 3.h,
-                ),
-                Container(
-                  height: 19.h,
-                  width: 410.0.w,
-                  child: const Align(
-                    alignment: Alignment(-1.0, -1.0),
-                    child: drop_down_button()//its is drop down menu button show the category the user want to get,
-                  ),
-                ),
-                SizedBox(
-                  height: 10.h,
-                ),
-                Expanded(
-                  child: ListView(
-                    children: [
-                      product_detail_view(),
-                      //prooduct _detail_view gives the information of the product to the user
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                      product_detail_view(),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                      product_detail_view(),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                      product_detail_view(),
-                      SizedBox(
-                        height: 10.h,
-                      ),
-                      product_detail_view(),
-
-                    ],
-                  ),
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
         bottomNavigationBar: bottom_navigation_bar(),//its boottom navigation bar gives the naigation to the different messgaees
-        floatingActionButton: buildFloatingActionButton(),//floating action button gives option to chat
+        floatingActionButton: buildTextButton(),//floating action button gives option to chat
+      );
+    }
+
+    TextButton buildTextButton() {
+      return TextButton(
+        onPressed: (){},
+        child: CircleAvatar(
+          radius: 25.r,
+          backgroundColor: ColorManager.light_green_2,
+
+          child: Image.asset(IconAssets.chat_icon,fit: BoxFit.cover,height: 50.h,),
+        ),
       );
     }
   }
 
 
-Column _shop_detail() {
-    return Column(
-      children: [
-        Column(
-          children: [
-            //shop_detail widget is reuse widget we can use this when we need
-            shop_detail(
-                icon: Icons.location_on,
-                label: "12 Km",
-                left_margin: EdgeInsets.only(left: 10).w),
-            shop_detail(
-                icon: Icons.fire_truck_sharp,
-                label: "60 Minus",
-                left_margin: EdgeInsets.only(left: 35).w),
-            shop_detail(
-                icon: Icons.star,
-                label: "4.5",
-                left_margin: EdgeInsets.only(left: 0).w),
-          ],
-        )
-      ],
-    );
-  }
-
-  FloatingActionButton buildFloatingActionButton() {
-    // chat optin widget
-    return FloatingActionButton(
-      backgroundColor: ColorManager.green,
-      onPressed: () {},
-      child: Image.asset(IconAssets.chat_icon),
-    );
-  }
 
   Container top_noch_bar() {
     //top part of the UI
     return Container(
-
       child: Row(
-        mainAxisAlignment: MainAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
           Container(
-              margin: EdgeInsets.only(top: 5.r), child: Icon(Icons.arrow_back,size: 25,)),
-          SizedBox(
-            width: 15.w,
-          ),
+              margin: EdgeInsets.only(top: 5.r,right: 10.r), child: Icon(Icons.arrow_back,size: 25.w,)),
           Container(
             width: 280.0.w,
-            height: 30.0.h,
+            height: 35.0.h,
             decoration: BoxDecoration(
                 border: Border.all(color: ColorManager.grey),
-                borderRadius: BorderRadius.circular(5).w),
+                borderRadius: BorderRadius.circular(5.w)),
             child: TextField(
               cursorColor: ColorManager.green,
               decoration: InputDecoration(
                 prefixIcon: Icon(
                   Icons.search,
+                  size: 22.h,
                   color: ColorManager.green,
                 ),
                 border: InputBorder.none,
-                contentPadding: EdgeInsets.all(10).w,
+                // contentPadding: EdgeInsets.all(0),
                 hintText: "Search TESCO",
                 // border: OutlineInputBorder(),
               ),
             ),
           ),
-          SizedBox(
-            width: 10.w,
-          ),
           Container(
-              margin: EdgeInsets.only(top: 5).r,
-              child: Icon(Icons.document_scanner_outlined,size: 25,))
+              margin: EdgeInsets.only(top: 5.r,left: 0.r),
+              child: Icon(Icons.document_scanner_outlined,size: 25.w,))
         ],
       ),
     );
   }
+
   Container vendor_view() {
     return Container(
       margin: EdgeInsets.only(top: 5).r,
-      height: 20.h,
+      height: 18.h,
+      width: 370.w,
       child: ListView(
         scrollDirection: Axis.horizontal,
         children: [
@@ -298,7 +304,7 @@ Column _shop_detail() {
 
   Container bottom_navigation_bar() {
     return Container(
-      height: 67,
+      height: 60.h,
       decoration: BoxDecoration(
         color: ColorManager.white,
         border: Border.all(color: ColorManager.black),
@@ -306,179 +312,221 @@ Column _shop_detail() {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Column(
-            children: [
-              IconButton(
-                  enableFeedback: false,
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.home,
-                    color: ColorManager.green,
-                    size: 35,
-                  )),
-              Text(
-                "HOME",
-                style: getTextStyle(
+          Container(
+            child: Column(
+              children: [
+                TextButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.home,
+                      color: ColorManager.green,
+                      size: 30.r,
+                    )),
+                Text(
+                  "HOME",
+                  style: newgetTextStyle(12.sp,
                       FontWeightManager.medium,
                       ColorManager.green),
-              )
-            ],
+                )
+              ],
+            ),
           ),
-          Column(
-            children: [
-              IconButton(
-                  enableFeedback: false,
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.group,
-                    color: ColorManager.green,
-                    size: 30,
-                  )),
-              Text(
-                "VENDORS",
-                style: getTextStyle(
-                     FontWeightManager.medium,
-                     ColorManager.green),
-              )
-            ],
+          Container(
+            child: Column(
+              children: [
+                TextButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.group,
+                      color: ColorManager.green,
+                      size: 30.r,
+                    )),
+                Text(
+                  "VENDORS",
+                  style: newgetTextStyle(12.sp,
+                      FontWeightManager.medium,
+                      ColorManager.green),
+                )
+              ],
+            ),
           ),
-          Column(
-            children: [
-              IconButton(
-                  enableFeedback: false,
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.list,
-                    color: ColorManager.green,
-                    size: 30,
-                  )),
-              Text(
-                "LIST",
-                style: getTextStyle(
-                     FontWeightManager.medium,
-                     ColorManager.green),
-              )
-            ],
+          Container(
+            child: Column(
+              children: [
+                TextButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.list,
+                      color: ColorManager.green,
+                      size: 30.r,
+                    )),
+                Text(
+                  "LIST",
+                  style: newgetTextStyle(12.sp,
+                      FontWeightManager.medium,
+                      ColorManager.green),
+                )
+              ],
+            ),
           ),
-          Column(
-            children: [
-              IconButton(
-                  enableFeedback: false,
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.grid_on_rounded,
-                    color: ColorManager.green,
-                    size: 30,
-                  )),
-              Text(
-                "CATEGORIES",
-                style: getTextStyle(
-                     FontWeightManager.medium,
-                     ColorManager.green),
-              )
-            ],
+          Container(
+            child: Column(
+              children: [
+                TextButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.grid_on_rounded,
+                      color: ColorManager.green,
+                      size: 30.r,
+                    )),
+                Text(
+                  "CATEGORIES",
+                  style: newgetTextStyle(12.sp,
+                      FontWeightManager.medium,
+                      ColorManager.green),
+                )
+              ],
+            ),
           ),
-          Column(
-            children: [
-              IconButton(
-                  enableFeedback: false,
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.add,
-                    color: ColorManager.green,
-                    size: 35,
-                  )),
-              Text(
-                "MORE",
-                style: getTextStyle(
-                     FontWeightManager.medium,
-                     ColorManager.green),
-              )
-            ],
+          Container(
+            child: Column(
+              children: [
+                TextButton(
+                    onPressed: () {},
+                    child: Icon(
+                      Icons.add,
+                      color: ColorManager.green,
+                      size: 30.r,
+                    )),
+                Text(
+                  "MORE",
+                  style: newgetTextStyle(12.sp,
+                      FontWeightManager.medium,
+                      ColorManager.green),
+                )
+              ],
+            ),
           ),
         ],
       ),
     );
   }
 
-  Card product_detail_view() {
-    return Card(
-      margin: EdgeInsets.only(right: 4).r,
-      child: Row(
-        children: [
-          Column(
-            children: [
-              Stack(
+  Container product_detail_view() {
+    return Container(
+      height: 140.h,
+      child: Card(
+        child: Row(
+          children: [
+            Container(
+              height: 170.h,
+              width: 120.w,
+              decoration: BoxDecoration(
+                  image: DecorationImage(
+                      image: AssetImage(ImageAssets.product_2_image),
+                      fit: BoxFit.cover),
+                  borderRadius: BorderRadius.all(Radius.circular(4).w)),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Container(
-                    child: Image.asset(
-                      ImageAssets.product_image,
-                      height: 150.h,
-                      width: 120.w,
-                    ),
-                  ),
                   Container(
                     decoration: BoxDecoration(
                       color: ColorManager.light_green,
                       borderRadius: BorderRadius.only(
-                          topLeft: Radius.circular(9.w),
-                          bottomRight: Radius.circular(20.w)),
+                          topLeft: Radius.circular(2.w),
+                          bottomRight: Radius.circular(15.w)),
                     ),
-                    padding: EdgeInsets.all(5).w,
+                    padding: EdgeInsets.all(3).w,
                     child: Text(
                       "10% Discount",
-                      style: getTextStyle(
-                       FontWeightManager.bold,
-                           ColorManager.white),
+                      style: newgetTextStyle(10.sp,FontWeight.bold, ColorManager.white),
                     ),
                   ),
-                  Positioned(
-                    top: 145.r,
-                    left: 60,
-                    child: Container(
-                      padding: EdgeInsets.all(2.w),
-                      decoration: BoxDecoration(
-                          color: ColorManager.white.withOpacity(0.5),
-                          borderRadius: BorderRadius.circular(6.w)),
-                      child: Row(
-                        children: [
-                          Icon(
-                            Icons.star,
-                            color: ColorManager.green,
-                          ),
-                          Text(
-                            "4.5",
-                            style:
-                            getTextWeight(  FontWeightManager.bold),
-                          )
-                        ],
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.end,
+                    children: [
+                      Container(
+                        width: 45.w,
+                        decoration: BoxDecoration(
+                            color: ColorManager.white.withOpacity(0.5),
+                            borderRadius: BorderRadius.only(
+                                topLeft: Radius.circular(10).w)),
+                        child: Row(
+                          children: [
+                            Icon(
+                              Icons.star,
+                              color: ColorManager.green,
+                              size: 15.w,
+                            ),
+                            Text(
+                              "4.5",
+                              style: TextStyle(fontWeight: FontWeight.bold,fontSize: 15.sp),
+                            )
+                          ],
+                        ),
                       ),
-                    ),
-                  )
+                    ],
+                  ),
                 ],
-              )
-            ],
-          ),
-          buildColumn(),
-          SizedBox(
-            width: 5.w,
-          ),
-          Container(
-              margin: EdgeInsets.only(top: 10,left: 0).r,
-              width: 50.w,
-              height: 150.h,
-              child: Align(
-                alignment: FractionalOffset(0.1, 0.1),
-                child: Column(
+              ),
+            ),
+            SizedBox(
+              width: 5.w,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text("6 * KG"),
+                    Text(
+                      "TESCO",
+                      style: getStyle(20.sp, FontWeightManager.bold,
+                          ColorManager.red_accent),
+                    ),
+                    SizedBox(
+                      height: 3.h,
+                    ),
+                    Text(
+                      "Samsung TV",
+                      style: TextStyle(fontSize: 15.sp,fontWeight: FontWeight.w500),
+                    ),
+                    SizedBox(
+                      height: 3.h,
+                    ),
+                    Text(
+                      "Screen size",
+                      style: TextStyle(fontWeight: FontWeight.w500,fontSize: 15.sp),
+                    ),
+                    SizedBox(
+                      height: 7.h,
+                    ),
+                    Text(
+                      "(500 g - *5)",
+                      style: newgetTextStyle(10.sp,
+                          FontWeightManager.bold, ColorManager.grey),
+                    ),
+                    SizedBox(
+                      height: 10.h,
+                    ),
+                    Text(
+                      "Lorem ipsum dolor .........",
+                      style: newgetTextStyle(13.sp,
+                          FontWeightManager.medium, ColorManager.red_accent),
+                    )
+                  ],
+                ),
+                Column(
+                  children: [
+                    Text("6 * KG",style: TextStyle(fontSize: 15.sp),),
                     SizedBox(
                       height: 10.h,
                     ),
                     Text(
                       "& 6.90",
-                      style: getStyle(
-                          15.sp, FontWeightManager.super_bold, ColorManager.green),
+                      style: getStyle(15.sp, FontWeightManager.super_bold,
+                          ColorManager.green),
                     ),
                     SizedBox(
                       height: 40.h,
@@ -488,14 +536,16 @@ Column _shop_detail() {
                       backgroundColor: ColorManager.green,
                       child: Icon(
                         Icons.add,
-                        size: 25,
+                        size: 20.h,
                         color: ColorManager.white,
                       ),
                     )
                   ],
                 ),
-              ))
-        ],
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }

@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
 class ColorManager {
-  static const Color green = Colors.green;
+  static  Color? light_green_2 = Colors.green[400];
+  static  Color green = Colors.green;
   static const Color white = Colors.white;
   static const Color black = Colors.black;
   static const Color red_accent = Colors.redAccent;

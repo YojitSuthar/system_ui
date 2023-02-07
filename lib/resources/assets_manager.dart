@@ -4,7 +4,8 @@ const String ICON_PATH = "asset/icons";
 
 class ImageAssets {
   static const String company_image = "$IMAGE_PATH/Tesco.jpeg";
-  static const String product_image = "$IMAGE_PATH/product.jpeg";
+  static const String product_1_image = "$IMAGE_PATH/product.jpeg";
+  static const String product_2_image = "$IMAGE_PATH/pepsi.jpeg";
 }
 
 class IconAssets {
